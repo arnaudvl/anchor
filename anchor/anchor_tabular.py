@@ -6,7 +6,7 @@ import numpy as np
 
 class AnchorTabularExplainer(object):
 
-    def __init__(self, predict_fn, train_data, train_labels, class_names, feature_names,
+    def __init__(self, predict_fn, train_data, class_names, feature_names,
                  categorical_names=None, discretizer='quartile'):
         """
         Initialize the anchor tabular explainer.
@@ -17,8 +17,6 @@ class AnchorTabularExplainer(object):
             Model prediction function
         train_data
             Representative sample from the training data
-        train_labels
-            Labels for train_data
         class_names
             List with target labels names
         feature_names
@@ -30,7 +28,6 @@ class AnchorTabularExplainer(object):
         """
         self.predict_fn = predict_fn
         self.train_data = train_data
-        self.train_labels = train_labels
 
         # define column indices of categorical and ordinal features
         self.categorical_features = sorted(categorical_names.keys())
