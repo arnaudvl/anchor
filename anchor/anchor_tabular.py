@@ -6,8 +6,7 @@ import numpy as np
 
 class AnchorTabularExplainer(object):
 
-    def __init__(self, predict_fn, train_data, class_names, feature_names,
-                 categorical_names=None, discretizer='quartile'):
+    def __init__(self, predict_fn, train_data, feature_names, categorical_names=None, discretizer='quartile'):
         """
         Initialize the anchor tabular explainer.
 
@@ -17,8 +16,6 @@ class AnchorTabularExplainer(object):
             Model prediction function
         train_data
             Representative sample from the training data
-        class_names
-            List with target labels names
         feature_names
             List with feature names
         categorical_names
@@ -34,7 +31,6 @@ class AnchorTabularExplainer(object):
         self.ordinal_features = [x for x in range(len(feature_names)) if x not in self.categorical_features]
 
         self.feature_names = feature_names
-        self.class_names = class_names
         self.categorical_names = categorical_names  # dict with {col: categorical feature options}
 
         # quartile or decile discretization of ordinal features
