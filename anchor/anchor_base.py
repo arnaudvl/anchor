@@ -1,9 +1,7 @@
 """Base anchor functions"""
 from __future__ import print_function
 import numpy as np
-import operator
 import copy
-import sklearn
 import collections
 
 
@@ -73,7 +71,7 @@ class AnchorBaseBeam(object):
     @staticmethod
     def compute_beta(n_features, t, delta):
         """
-        NO CLUE WHAT IT IS
+        DID NOT LOOK AT THE REASON FOR THE MAGIC NUMBERS YET
         """
         alpha = 1.1
         k = 405.5
